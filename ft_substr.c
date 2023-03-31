@@ -6,11 +6,10 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:27:34 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/29 13:11:38 by shikim           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:49:16 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static size_t	check_len_substr(char const *s, unsigned int start, size_t len)

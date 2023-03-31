@@ -6,7 +6,7 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:01:58 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/31 16:16:29 by shikim           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:45:55 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,35 @@ static char	*ft_strndup(const char *s, size_t n)
 	return (str);
 }
 
-static size_t	ft_wordcount(char const *s, char c)
+static size_t	ft_count_word(char const *s, char c)
 {
-	size_t	listsize;
+	size_t	count;
 	size_t	i;
 
 	i = 0;
-	listsize = 0;
+	count = 0;
 	while (s[i] != '\0')
 	{
 		if ((i == 0 && s[i] != c) || \
 		(s[i] == c && s[i + 1] != '\0' && s[i + 1] != c))
-			listsize++;
+			count++;
 		i++;
 	}
-	return (listsize);
+	return (count);
+}
+
+char	**ft_freeall(char **list)
+{
+	size_t	j;
+
+	j = 0;
+	while (list[j])
+	{
+		free(list[j]);
+		j++;
+	}
+	free(list);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -57,17 +71,17 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	strlist = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	strlist = (char **)malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (strlist == 0)
 		return (0);
-	while (i < ft_wordcount(s, c) && s[k] != '\0')
+	while (i < ft_count_word(s, c) && s[k] != '\0')
 	{
 		while (s[k] == c)
 			k++;
 		save = k;
 		while (s[k] != c && s[k] != '\0')
 			k++;
-		strlist[i] = ft_strndup(&s[save], k - save);
+		strlist[i] = ft_strndup((s + save), k - save);
 		if (strlist[i++] == 0)
 			return (ft_freeall(strlist));
 	}

@@ -6,11 +6,10 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:38:22 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/29 14:56:00 by shikim           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:49:14 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
