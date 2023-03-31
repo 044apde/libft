@@ -6,14 +6,14 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:01:58 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/29 17:07:32 by shikim           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:16:29 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
 	size_t	i;
 	char	*str;
@@ -31,7 +31,7 @@ char	*ft_strndup(const char *s, size_t n)
 	return (str);
 }
 
-size_t	ft_wordcount(char const *s, char c)
+static size_t	ft_wordcount(char const *s, char c)
 {
 	size_t	listsize;
 	size_t	i;
