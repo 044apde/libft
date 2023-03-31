@@ -33,10 +33,10 @@ static int check_size(int n)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char *ft_itoa(int n)
 {
-	char	*dst;
-	int		dst_size;
+	char 		*dst;
+	int 		dst_size;
 	long long	num;
 
 	dst_size = check_size(n);
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 		while (dst_size-- > 0)
 		{
 			dst[dst_size] = (num % 10) + 48;
-			num = num / 10; 
+			num = num / 10;
 		}
 	}
 	else
