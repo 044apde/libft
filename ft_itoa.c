@@ -41,23 +41,15 @@ char *ft_itoa(int n)
 
 	dst_size = check_size(n);
 	dst = (char *)malloc(dst_size + 1);
-	dst[dst_size] = '\0';
-	if (n >= 0)
+	while (dst_size-- > 1)
 	{
-		while (dst_size-- > 0)
-		{
-			dst[dst_size] = (num % 10) + 48;
-			num = num / 10;
-		}
+		dst[dst_size] = (num % 10) + 48;
+		num = num / 10;
 	}
+	if (n < 0)
+		dst[0]= '-';
 	else
-	{
-		while (dst_size-- > 1)
-		{
-			dst[dst_size] = (num % 10) + 48;
-			num = num / 10;
-		}
-		dst[0] = '-';
-	}
+		dst[0] = (num % 10) + 48;
+	dst[dst_size] = '\0';
 	return (dst);
 }
