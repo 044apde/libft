@@ -68,7 +68,8 @@ char	**ft_split(char const *s, char c)
 		while (s[k] != c && s[k] != '\0')
 			k++;
 		strlist[i] = ft_strndup(&s[save], k - save);
-		i++;
+		if (strlist[i++] == 0)
+			return (ft_freeall(strlist));
 	}
 	strlist[i] = 0;
 	return (strlist);
