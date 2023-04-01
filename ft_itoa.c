@@ -6,18 +6,29 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:48:22 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/31 23:29:55 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/01 16:39:16 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int check_size(int n)
+static unsigned int	absoluitize(int n)
+{
+	unsigned int	dst;
+
+	if (n < 0)
+		dst = (long long)n * -1;
+	else
+		dst = (long long)n;
+	return (dst);
+}
+
+static int	measure_size(int n)
 {
 	int			size;
 	long long	num;
 
-	size = 0;
+	size = 1;
 	if (n < 0)
 	{
 		++size;
@@ -25,31 +36,34 @@ static int check_size(int n)
 	}
 	else
 		num = (long long)n;
-	while (num > 0)
+	while (num >= 10)
 	{
 		++size;
-		num /= 10;
+		num = num / 10;
 	}
 	return (size);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char 		*dst;
-	int 		dst_size;
-	long long	num;
+	char			*dst;
+	int				dst_size;
+	unsigned int	num;
 
-	dst_size = check_size(n);
+	num = absoluitize(n);
+	dst_size = measure_size(n);
 	dst = (char *)malloc(dst_size + 1);
+	if (dst == 0)
+		return (0);
+	dst[dst_size] = '\0';
 	while (dst_size-- > 1)
 	{
 		dst[dst_size] = (num % 10) + 48;
 		num = num / 10;
 	}
 	if (n < 0)
-		dst[0]= '-';
+		dst[0] = '-';
 	else
 		dst[0] = (num % 10) + 48;
-	dst[dst_size] = '\0';
 	return (dst);
 }
