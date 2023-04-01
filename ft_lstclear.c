@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 21:18:06 by shikim            #+#    #+#             */
-/*   Updated: 2023/04/01 21:22:37 by shikim           ###   ########.fr       */
+/*   Created: 2023/04/02 04:18:16 by marvin            #+#    #+#             */
+/*   Updated: 2023/04/02 04:18:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (lst != 0 && new != 0)
+	t_list	*tmp;
+
+	if (lst == 0)
+		return ;
+	while (*lst != 0)
 	{
-		new->next = *lst;
-		*lst = new;
+		tmp = (*lst)->next; // 포인터 * 역참조보다 '->' 가 우선순위가 높다.
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
+	*lst = 0;
 }
