@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 02:45:48 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/02 02:45:48 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/03 08:39:32 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int count = 0;
+	int	count;
+
+	count = 0;
 	while (lst != 0)
 	{
 		count++;

@@ -6,7 +6,7 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 19:53:58 by shikim            #+#    #+#             */
-/*   Updated: 2023/04/01 21:18:33 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/03 10:42:41 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define NULL 0
 
 typedef struct s_list
 {
@@ -51,6 +50,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *dest, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
