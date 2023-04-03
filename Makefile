@@ -36,9 +36,9 @@ re :
 	make all
 
 $(NAME) : $(OBJ)
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) $(ARFLAGS) $@ $?
 
 %.o : %. c $(OBJ)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INC)
+	$(CC) $(CFLAGS) -c $? -o $@ -I $(INC)
 
 .PHONY : all bonus clean fclean re
