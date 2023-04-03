@@ -6,11 +6,10 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:28:42 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/29 13:36:59 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:29:32 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

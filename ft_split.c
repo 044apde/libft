@@ -6,11 +6,10 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:01:58 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/31 16:45:55 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:28:03 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static char	*ft_strndup(const char *s, size_t n)
