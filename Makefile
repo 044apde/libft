@@ -21,8 +21,7 @@ else
 endif
  
 all : $(NAME)
-	sleep 1
-	
+
 bonus : $(OBJ)
 	make all BONUS=1
 
