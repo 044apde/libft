@@ -6,11 +6,9 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 19:46:53 by shikim            #+#    #+#             */
-/*   Updated: 2023/04/03 11:52:59 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/04 15:48:55 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

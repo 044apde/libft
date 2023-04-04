@@ -14,16 +14,19 @@ SRCS_B  = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back
 OBJ_FILES	= $(SRCS:.c=.o)
 OBJ_FILES_B = $(SRCS_B:.c=.o)
 
-ifdef BONUS
-	OBJ = $(OBJ_FILES_B)
-else
-	OBJ = $(OBJ_FILES)
-endif
- 
 all : $(NAME)
 
-bonus : $(OBJ)
-	make all BONUS=1
+basic_file: $(OBJS_FILES)
+	rm -rf bonus_file
+	$(AR) $(ARFLAGS) $(NAME) $^
+	touch $@
+
+bonus: bonus_file
+
+bonus_file : $(OBJ_FILES_B) $(OBJ_FILES)
+	rm -rf basic_file
+	$(AR) $(ARFLAGS) $(NAME) $^
+	touch $@
 
 clean :
 	rm -f $(OBJ_FILES) $(OBJ_FILES_B)
@@ -35,10 +38,7 @@ re :
 	make fclean
 	make all
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ_FILES)
 	$(AR) $(ARFLAGS) $@ $?
-
-%.o : %. c $(OBJ)
-	$(CC) $(CFLAGS) -c $? -o $@ -I $(INC)
 
 .PHONY : all bonus clean fclean re

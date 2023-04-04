@@ -6,7 +6,7 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:43:57 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/29 14:33:00 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/03 19:55:45 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		index;
-	char	*temp_s;
-	char	temp_c;
+	size_t	len_s;
 
-	temp_s = (char *)s;
-	index = ft_strlen(temp_s) + 1;
-	temp_c = (char) c;
-	while (index-- > 0)
+	len_s = ft_strlen(s) + 1;
+	while (len_s-- > 0)
 	{
-		if (*temp_s == temp_c)
-			return (temp_s);
-		temp_s++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
 	return (0);
 }
