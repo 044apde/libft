@@ -6,7 +6,7 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 18:21:23 by shikim            #+#    #+#             */
-/*   Updated: 2023/03/18 19:15:59 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/04 17:44:51 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	while (dst[i] && i < dstsize)
+	while (i < dstsize && dst[i])
 		i++;
 	while (src[j] && (i + j + 1) < dstsize)
 	{
