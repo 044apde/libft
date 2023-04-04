@@ -6,7 +6,7 @@
 /*   By: shikim <shikim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:38:22 by shikim            #+#    #+#             */
-/*   Updated: 2023/04/04 15:44:09 by shikim           ###   ########.fr       */
+/*   Updated: 2023/04/04 20:11:25 by shikim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed_str = (char *)malloc(end - start + 2);
 	if (trimmed_str == 0)
 		return (0);
-	ft_memcpy(trimmed_str, &s1[start], end - start + 1);
+	ft_memmove(trimmed_str, &s1[start], end - start + 1);
 	trimmed_str[end - start + 1] = '\0';
 	return (trimmed_str);
 }
