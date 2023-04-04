@@ -29,10 +29,10 @@ bonus_file : $(OBJ_FILES_B) $(OBJ_FILES)
 	touch $@
 
 clean :
-	rm -f $(OBJ_FILES) $(OBJ_FILES_B) bonus_file
+	rm -f $(OBJ_FILES) $(OBJ_FILES_B) bonus_file basic_file
 
 fclean : clean
-	rm -f $(NAME) bonus_file
+	rm -f $(NAME) bonus_file basic_file
 
 re :
 	make fclean
